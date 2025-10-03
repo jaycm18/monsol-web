@@ -13,6 +13,7 @@ function WooCommerceCard({ onImageClick }) {
         <img
           src={images[0]}
           alt="WooCommerce-projekti"
+          loading="lazy"
           className="w-full h-48 object-cover transform transition-transform duration-300 hover:scale-110 cursor-zoom-in"
           onClick={e => {
             e.preventDefault();
@@ -86,6 +87,7 @@ export default function Projects() {
               <img
                 src={fwImages[0]}
                 alt="FreeWo-projekti"
+                loading="lazy"
                 className="w-full h-48 object-cover transform transition-transform duration-300 hover:scale-110 cursor-zoom-in"
                 onClick={e => {
                   e.preventDefault();

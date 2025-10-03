@@ -1,5 +1,4 @@
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
 
 export default function StructuredData() {
   const organizationSchema = {
@@ -49,11 +48,27 @@ export default function StructuredData() {
     ]
   };
 
-  return (
-    <Helmet>
-      <script type="application/ld+json">
-        {JSON.stringify(organizationSchema)}
-      </script>
-    </Helmet>
-  );
+  useEffect(() => {
+    // Poista vanha structured data jos on
+    const existing = document.querySelector('script[type="application/ld+json"]');
+    if (existing) {
+      existing.remove();
+    }
+
+    // Lisää uusi structured data
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(organizationSchema);
+    document.head.appendChild(script);
+
+    // Cleanup function
+    return () => {
+      const scriptToRemove = document.querySelector('script[type="application/ld+json"]');
+      if (scriptToRemove) {
+        scriptToRemove.remove();
+      }
+    };
+  }, []);
+
+  return null;
 }

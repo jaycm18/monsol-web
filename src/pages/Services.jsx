@@ -2,8 +2,74 @@ import React from "react";
 import { FaCode, FaWordpress, FaProjectDiagram, FaLaptopCode, FaBuilding, FaShoppingCart, FaShieldAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
+import { useEffect } from "react";
 
 export default function Services() {
+  // Service Schema
+  useEffect(() => {
+    const serviceSchema = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Monsol - Ohjelmistokehityspalvelut",
+      "description": "Web-sovellukset, WordPress-sivut ja verkkokaupat",
+      "provider": {
+        "@type": "Organization",
+        "name": "Monsol"
+      },
+      "areaServed": "FI",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Ohjelmistokehityspalvelut",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pieni sivusto",
+              "description": "1-3 sivua, sopiva pienelle yritykselle"
+            },
+            "price": "495",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Yrityspaketti",
+              "description": "3-5 sivua, laajempi sivustorakenne"
+            },
+            "price": "995",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service", 
+              "name": "Verkkokauppa",
+              "description": "WooCommerce-verkkokauppa"
+            },
+            "price": "1495",
+            "priceCurrency": "EUR"
+          }
+        ]
+      }
+    };
+
+    const existing = document.querySelector('script[data-service-schema]');
+    if (existing) existing.remove();
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.setAttribute('data-service-schema', 'true');
+    script.text = JSON.stringify(serviceSchema);
+    document.head.appendChild(script);
+
+    return () => {
+      const scriptToRemove = document.querySelector('script[data-service-schema]');
+      if (scriptToRemove) scriptToRemove.remove();
+    };
+  }, []);
+
   return (
     <>
       <SEO 

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
 
 export default function SEO({ 
   title, 
@@ -14,40 +13,64 @@ export default function SEO({
   const siteUrl = 'https://monsol.fi'; // Vaihda oikeaan domain-osoitteeseen
   const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
   const defaultImage = `${siteUrl}/home5.jpg`;
+  const finalImage = image || defaultImage;
 
-  return (
-    <Helmet>
-      {/* Perus meta-tagit */}
-      <title>{fullTitle}</title>
-      <meta name="description" content={description} />
-      {keywords && <meta name="keywords" content={keywords} />}
-      
-      {/* Open Graph (Facebook, LinkedIn) */}
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
-      <meta property="og:type" content={type} />
-      <meta property="og:url" content={fullUrl} />
-      <meta property="og:image" content={image || defaultImage} />
-      <meta property="og:site_name" content={siteTitle} />
-      <meta property="og:locale" content="fi_FI" />
-      
-      {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image || defaultImage} />
-      
-      {/* Canonical URL */}
-      <link rel="canonical" href={fullUrl} />
-      
-      {/* Robots */}
-      <meta name="robots" content="index, follow" />
-      
-      {/* Language */}
-      <meta httpEquiv="content-language" content="fi" />
-      
-      {/* Author */}
-      <meta name="author" content="Monsol" />
-    </Helmet>
-  );
+  useEffect(() => {
+    // Update title
+    document.title = fullTitle;
+    
+    // Update meta tags
+    const updateMeta = (name, content) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.name = name;
+        document.head.appendChild(meta);
+      }
+      meta.content = content;
+    };
+
+    const updateProperty = (property, content) => {
+      let meta = document.querySelector(`meta[property="${property}"]`);
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute('property', property);
+        document.head.appendChild(meta);
+      }
+      meta.content = content;
+    };
+
+    // Basic meta tags
+    updateMeta('description', description);
+    if (keywords) updateMeta('keywords', keywords);
+    updateMeta('author', 'Monsol');
+    updateMeta('robots', 'index, follow');
+    
+    // Open Graph (Facebook, LinkedIn)
+    updateProperty('og:title', fullTitle);
+    updateProperty('og:description', description);
+    updateProperty('og:type', type);
+    updateProperty('og:url', fullUrl);
+    updateProperty('og:image', finalImage);
+    updateProperty('og:site_name', siteTitle);
+    updateProperty('og:locale', 'fi_FI');
+    
+    // Twitter Card
+    updateMeta('twitter:card', 'summary_large_image');
+    updateMeta('twitter:title', fullTitle);
+    updateMeta('twitter:description', description);
+    updateMeta('twitter:image', finalImage);
+    
+    // Canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = fullUrl;
+    
+  }, [fullTitle, description, keywords, fullUrl, finalImage, type, siteTitle]);
+
+  return null;
 }

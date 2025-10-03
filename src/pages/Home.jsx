@@ -25,12 +25,12 @@ export default function Home() {
           <p className="text-base sm:text-lg md:text-xl mb-4 sm:mb-6 text-text">
             Monsol tarjoaa ammattitaitoista web-kehitystä, WordPress-ratkaisuja ja paljon muuta. Katsotaan yhdessä mitä voimme rakentaa!
           </p>
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="inline-block bg-accent text-background px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-xl font-medium hover:opacity-90 transition"
           >
             Ota yhteyttä
-          </a>
+          </Link>
         </div>
       </div>
 

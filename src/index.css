@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+  font-size: 16px; /* Tämä varmistaa, että fonttikoko ei muutu liian suureksi suurilla näytöillä */
+}
+
+body {
+  width: 100%;
+  margin: 0;
+}
+
+.max-width-container {
+  width: 100%;
+  max-width: 1200px; /* Tämä estää sivua laajenemasta liikaa suurilla näytöillä */
+  margin: 0 auto;
+}
+

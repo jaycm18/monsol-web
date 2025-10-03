@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import { FaGithub, FaEnvelope } from "react-icons/fa"
 
 export default function Footer() {
@@ -20,12 +21,12 @@ export default function Footer() {
           </a>
 
           {/* Contact-sivun linkki */}
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="hover:text-accent transition"
           >
             <FaEnvelope size={28} />
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

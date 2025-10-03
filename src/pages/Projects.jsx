@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 function WooCommerceCard({ onImageClick }) {
   const images = [
     "/kogle_screen.jpg",
@@ -208,12 +209,12 @@ export default function Projects() {
           <p className="text-text mb-6 text-base md:text-lg">
             Ota rohkeasti yhteyttä niin suunnitellaan yhdessä juuri sinulle sopiva ratkaisu.
           </p>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="inline-block bg-accent text-background px-6 md:px-8 py-2 md:py-4 rounded-xl font-semibold hover:opacity-90 transition"
           >
             Ota yhteyttä
-          </a>
+          </Link>
         </section>
       </div>
     </section>

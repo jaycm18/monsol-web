@@ -2,11 +2,19 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaCode, FaWordpress, FaProjectDiagram } from "react-icons/fa";
+import SEO from "../components/SEO";
 
 export default function Home() {
   return (
-    <section className="font-retro bg-background text-text">
-      {/* Hero-osio */}
+    <>
+      <SEO 
+        title="Etusivu"
+        description="Monsol tarjoaa ammattitaitoista web-kehitystä, WordPress-ratkaisuja ja ohjelmistokehityspalveluja. Räätälöidyt ratkaisut yrityksillesi."
+        keywords="web-kehitys, WordPress, ohjelmistokehitys, verkkokauppa, WooCommerce, React, Node.js"
+        url="/"
+      />
+      <section className="font-retro bg-background text-text">
+        {/* Hero-osio */}
       <div className="relative h-screen -mt-16 md:-mt-20 flex items-center justify-center">
         {/* Taustakuva */}
         <motion.img
@@ -101,6 +109,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
-    </section>
+      </section>
+    </>
   );
 }

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://monsol.fi/sitemap.xml
+
+# Disallow admin pages if any
+Disallow: /admin/
+Disallow: /_vite/

@@ -1,9 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 export default function About() {
   return (
-    <section className="py-20 px-6 bg-background text-text font-retro min-h-screen">
+    <>
+      <SEO 
+        title="Tietoa meistä"
+        description="Tutustu Monsoliin - moderniin ohjelmistokehitysyritykseen. Autamme yrityksiä menestymään verkossa laadukkailla digitaalisilla ratkaisuilla."
+        keywords="tietoa, yritys, ohjelmistokehitys, digitaaliset ratkaisut, web-kehitys"
+        url="/about"
+      />
+      <section className="py-20 px-6 bg-background text-text font-retro min-h-screen">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold mb-12 text-accent text-center">
           Tietoa Meistä
@@ -119,6 +127,7 @@ export default function About() {
           </Link>
         </section>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

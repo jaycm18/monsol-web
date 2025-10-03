@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 function WooCommerceCard({ onImageClick }) {
   const images = [
     "/kogle_screen.jpg",
@@ -62,7 +63,14 @@ export default function Projects() {
   ];
 
   return (
-    <section className="py-20 px-6 bg-background text-text font-retro min-h-screen">
+    <>
+      <SEO 
+        title="Referenssit ja projektit"
+        description="Katso Monsoln toteutetut projektit: WooCommerce-verkkokauppoja ja web-sovelluksia. Ammattitaitoista toteutusta modernein teknologioin."
+        keywords="referenssit, projektit, WooCommerce, verkkokauppa, web-sovellukset, portfolio"
+        url="/projects"
+      />
+      <section className="py-20 px-6 bg-background text-text font-retro min-h-screen">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold mb-12 text-accent text-center">
           Referenssit
@@ -217,6 +225,7 @@ export default function Projects() {
           </Link>
         </section>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

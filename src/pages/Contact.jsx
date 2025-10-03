@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SEO from "../components/SEO";
 
 export default function Contact() {
   const [status, setStatus] = useState("");
@@ -27,7 +28,14 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-20 px-6 bg-background text-text font-retro min-h-screen">
+    <>
+      <SEO 
+        title="Ota yhteyttä"
+        description="Ota yhteyttä Monsoliin ja keskustellaan projektistasi. Tarjoamme ilmaisen konsultaation ja räätälöidyt tarjoukset."
+        keywords="ota yhteyttä, konsultaatio, tarjous, yhteydenotto, projekti"
+        url="/contact"
+      />
+      <section className="py-20 px-6 bg-background text-text font-retro min-h-screen">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold mb-12 text-accent text-center">
           Ota yhteyttä
@@ -100,6 +108,7 @@ export default function Contact() {
           {status && <p className="text-accent font-semibold mt-4 text-center">{status}</p>}
         </form>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

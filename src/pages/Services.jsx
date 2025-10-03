@@ -1,10 +1,18 @@
 import React from "react";
 import { FaCode, FaWordpress, FaProjectDiagram, FaLaptopCode, FaBuilding, FaShoppingCart, FaShieldAlt } from "react-icons/fa";
-import { Link } from "react-router-dom"; // jos käytät react-routeria
+import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 export default function Services() {
   return (
-    <section className="py-20 px-6 bg-background text-text font-retro min-h-screen">
+    <>
+      <SEO 
+        title="Palvelut ja hinnasto"
+        description="Katso Monsoln palvelut ja hinnat: web-sovellukset, WordPress-sivut, verkkokaupat ja ohjelmistokehitys. Räätälöidyt ratkaisut yrityksillesi."
+        keywords="web-sovellukset, WordPress, WooCommerce, verkkokauppa, ohjelmistokehitys, hinnat, palvelut"
+        url="/services"
+      />
+      <section className="py-20 px-6 bg-background text-text font-retro min-h-screen">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold mb-12 text-accent text-center">
           Palvelut ja hinnasto
@@ -189,6 +197,7 @@ export default function Services() {
           </Link>
         </section>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

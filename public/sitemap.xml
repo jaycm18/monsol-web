@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://monsol.fi/</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2025-10-03</lastmod>
+  </url>
+  <url>
+    <loc>https://monsol.fi/services</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-10-03</lastmod>
+  </url>
+  <url>
+    <loc>https://monsol.fi/projects</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-10-03</lastmod>
+  </url>
+  <url>
+    <loc>https://monsol.fi/about</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-10-03</lastmod>
+  </url>
+  <url>
+    <loc>https://monsol.fi/contact</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-10-03</lastmod>
+  </url>
+</urlset>

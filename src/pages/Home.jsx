@@ -36,6 +36,15 @@ export default function Home() {
           <Link
             to="/contact"
             className="inline-block bg-accent text-background px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-xl font-medium hover:opacity-90 transition"
+            onClick={() => {
+              if (window.gtag) {
+                window.gtag('event', 'click', {
+                  event_category: 'CTA',
+                  event_label: 'Hero Contact Button',
+                  value: 1
+                });
+              }
+            }}
           >
             Ota yhteyttä
           </Link>
@@ -104,6 +113,15 @@ export default function Home() {
           <Link
             to="/contact"
             className="inline-block bg-accent text-background px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition"
+            onClick={() => {
+              if (window.gtag) {
+                window.gtag('event', 'click', {
+                  event_category: 'CTA',
+                  event_label: 'Home Bottom Contact Button',
+                  value: 1
+                });
+              }
+            }}
           >
             Ota yhteyttä
           </Link>

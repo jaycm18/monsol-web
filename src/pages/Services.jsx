@@ -87,7 +87,19 @@ export default function Services() {
         {/* Palvelut kortteina */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {/* Web-sovellukset */}
-          <Link to="/contact" className="transform hover:scale-105 transition-transform cursor-pointer">
+          <Link 
+            to="/contact" 
+            className="transform hover:scale-105 transition-transform cursor-pointer"
+            onClick={() => {
+              if (window.gtag) {
+                window.gtag('event', 'click', {
+                  event_category: 'Service',
+                  event_label: 'Web-sovellukset',
+                  value: 1
+                });
+              }
+            }}
+          >
             <div className="bg-primary p-8 rounded-xl shadow-md hover:shadow-xl">
               <FaCode className="text-accent text-4xl mx-auto mb-4" />
               <h2 className="text-2xl font-semibold mb-4 text-text text-center">
@@ -258,6 +270,15 @@ export default function Services() {
           <Link
             to="/contact"
             className="inline-block bg-accent text-background px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition"
+            onClick={() => {
+              if (window.gtag) {
+                window.gtag('event', 'click', {
+                  event_category: 'CTA',
+                  event_label: 'Services Contact Button',
+                  value: 1
+                });
+              }
+            }}
           >
             Ota yhteyttä
           </Link>

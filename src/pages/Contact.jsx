@@ -19,6 +19,15 @@ export default function Contact() {
       if (response.ok) {
         setStatus("Kiitos viestistäsi! Otamme sinuun yhteyttä pian.");
         form.reset();
+        
+        // Google Analytics event
+        if (window.gtag) {
+          window.gtag('event', 'form_submit', {
+            event_category: 'Contact',
+            event_label: 'Contact Form Submission',
+            value: 1
+          });
+        }
       } else {
         setStatus("Jokin meni pieleen, kokeile myöhemmin.");
       }

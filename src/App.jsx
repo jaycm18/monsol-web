@@ -10,10 +10,12 @@ import Projects from './pages/Projects'
 import ScrollToTop from './components/ScrollToTop'
 import StructuredData from './components/StructuredData'
 import BreadcrumbSchema from './components/BreadcrumbSchema'
+import GoogleAnalytics from './components/GoogleAnalytics'
 
 export default function App() {
   return (
     <BrowserRouter>
+      <GoogleAnalytics />
       <StructuredData />
       <BreadcrumbSchema />
       <ScrollToTop />

@@ -122,6 +122,15 @@ export default function About() {
           <Link
             to="/contact"
             className="inline-block bg-accent text-background px-6 md:px-8 py-2 md:py-4 rounded-xl font-semibold hover:opacity-90 transition"
+            onClick={() => {
+              if (window.gtag) {
+                window.gtag('event', 'click', {
+                  event_category: 'CTA',
+                  event_label: 'About Contact Button',
+                  value: 1
+                });
+              }
+            }}
           >
             Ota yhteyttä
           </Link>

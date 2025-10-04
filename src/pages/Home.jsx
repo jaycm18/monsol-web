@@ -15,17 +15,30 @@ export default function Home() {
       />
       <section className="font-retro bg-background text-text">
         {/* Hero-osio */}
-      <div className="relative h-screen -mt-16 md:-mt-20 flex items-center justify-center">
-        {/* Taustakuva */}
-        <motion.img
-          src="/home5.jpg"
-          alt="Ohjelmistokehitys"
-          className="absolute inset-0 w-full h-full object-cover brightness-75"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5 }}
-        />
-        {/* Tekstit hero-kuvan päällä */}
+        <div className="relative h-screen -mt-16 md:-mt-20 flex items-center justify-center">
+          {/* Placeholder tausta nopeaa latautumista varten */}
+          <div className="absolute inset-0 bg-gradient-to-br from-background to-primary opacity-50"></div>
+          
+          {/* Optimoitu taustakuva WebP + JPG fallback */}
+          <picture className="absolute inset-0">
+            <source 
+              srcSet="/home5.webp" 
+              type="image/webp"
+            />
+            <motion.img
+              src="/home5.jpg"
+              alt="Ohjelmistokehitys - Monsol tarjoaa moderneja web-ratkaisuja yrityksille"
+              className="w-full h-full object-cover brightness-75"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.5 }}
+            />
+          </picture>
+
+          {/* Tekstit hero-kuvan päällä */}
         <div className="relative z-10 text-center px-4 sm:px-6 md:px-0 max-w-3xl">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-accent">
             monsol - modernia ohjelmistokehitystä

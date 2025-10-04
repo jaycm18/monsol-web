@@ -15,7 +15,8 @@ export default defineConfig({
         }
       }
     },
-    // Compress assets
+    // Optimoi kuvat ja muut assetit
+    assetsInlineLimit: 4096, // Inline pienet tiedostot base64:nä
     minify: 'terser',
     terserOptions: {
       compress: {
@@ -24,6 +25,8 @@ export default defineConfig({
       }
     }
   },
+  // Optimoi kuvien lataus
+  assetsInclude: ['**/*.webp'],
   // Preload critical resources
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', 'framer-motion']

@@ -9,6 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#facc15" />
     <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Preload kriittisiä resursseja -->
+    <link rel="preload" href="/home5.webp" as="image" type="image/webp" />
+    <link rel="preload" href="/home5.jpg" as="image" type="image/jpeg" />
+    
+    <!-- DNS-prefetch ulkoisille resursseille -->
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    
     <title>Monsol - Modernia ohjelmistokehitystä</title>
     <meta name="description" content="Monsol tarjoaa ammattitaitoista web-kehitystä, WordPress-ratkaisuja ja ohjelmistokehityspalveluja. Räätälöidyt ratkaisut yrityksillesi." />
     <meta name="keywords" content="web-kehitys, WordPress, ohjelmistokehitys, verkkokauppa, WooCommerce, React, Node.js" />

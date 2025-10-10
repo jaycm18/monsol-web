@@ -92,7 +92,7 @@ Sivusto on optimoitu kaikille laitteille:
 
 ## 🌐 Tuotanto ja seuranta
 
-**Sivusto**: [monsol.fi](https://monsol.fi) (tai nykyinen Vercel-domain)
+**Sivusto**: [monsol.fi](https://monsol.fi) 
 **Repositorio**: [https://github.com/jaycm18/monsol-web](https://github.com/jaycm18/monsol-web)
 
 ### Käytössä olevat seurantatyökalut
